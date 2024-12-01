@@ -66,10 +66,6 @@ Glucose dynamics significantly impact health and longevity, not only for diabeti
 ---
 
 ## Join Us
-
-**Team Size**: 2  
-We welcome collaborators and supporters passionate about transforming glucose data management and advancing health and longevity through decentralized solutions.
-
 **Contact**:  
 - GitHub: [https://github.com/EduardoNeville/gluCombine](https://github.com/EduardoNeville/gluCombine)  
-- DAO Community: *Details Coming Soon*
+- DAO Community: [https://t.me/+1y-J5sSxorVkOGE0 GlucoseDAO telegram group]

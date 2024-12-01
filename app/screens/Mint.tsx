@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { SafeAreaView, View, Image, StyleSheet, Text } from 'react-native';
+import { SafeAreaView, View, Dimensions, Image, StyleSheet, Text } from 'react-native';
 import SliderComponent from '../components/SliderComponent';
 import colors from '../../types/colors';
+
+const width = Dimensions.get('window').width;
 
 const MintScreen = () => {
   const [sliderMoved, setSliderMoved] = useState(false);
@@ -21,7 +23,7 @@ const MintScreen = () => {
         <Image
           source={sliderMoved 
             ? require('../../assets/glucouse-NFT.png')
-            : require('../../assets/no-img.svg')
+            : require('../../assets/no-image.png')
           }
           style={styles.image}
         />
@@ -48,6 +50,7 @@ const styles = StyleSheet.create({
     color: colors.text,
     marginBottom: 10,
     textAlign: 'center',
+    width: width * 5 / 6,
   },
   description: {
     fontSize: 16,
@@ -57,8 +60,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   image: {
-    width: 200,
-    height: 200,
+    width: width * 5 / 6,
+    height: width / 3,
   },
   sliderContainer: {
     // The slider will naturally align at the bottom due to flex layout

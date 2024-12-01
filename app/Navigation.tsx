@@ -18,7 +18,7 @@ export const Nav: React.FC = () => {
     <NavigationContainer>
       <Navigator
         screenOptions={{
-          headerShown: false,
+          headerShown: true,
           headerStyle: {
             backgroundColor: "#FFF",
           },
@@ -26,15 +26,11 @@ export const Nav: React.FC = () => {
           headerTitleStyle: {
             fontWeight: "bold",
           },
+          header: () => <TopBar />, // Use the TopBar as the header
         }}
       >
         <Group>
-          <Screen name="Home"
-            options={{
-              headerShown: true,
-              header: () => <TopBar />, // Use the TopBar as the header
-            }}
-          >
+          <Screen name="Home">
             {(props: any) => (
               <HomeScreen
                 {...props}

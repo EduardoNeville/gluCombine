@@ -14,7 +14,7 @@ const ProfileScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/no-image.png')}
+        source={require('../../assets/user-img.png')}
         style={styles.image}
       />
       <View style={styles.profileItem}>

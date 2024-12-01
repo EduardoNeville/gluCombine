@@ -2,13 +2,14 @@ import React from 'react';
 import { Dimensions, View, StyleSheet } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import CarouselItem from './CarouselItem'; // Adjust the import path accordingly.
+import icon from 'nf-icons';
 
 function CarouselComponent(navigation: any) {
   const width = Dimensions.get('window').width;
 
   // Step 1: Define your data array with objects containing title, value, and text.
   const data = [
-    { head: 'Wallet', value: '£53.0', text: '+8 month over month' },
+    { head: 'Wallet', value: 'ETH 10.75', text: '+8 ETH month over month' },
     { head: 'Citation', value: '2,405', text: '+33% month over month' },
     // Add more items as needed
   ];

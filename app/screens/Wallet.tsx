@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
+import colors from '../../types/colors';
 
 interface Invoice {
   tokenId: string;
@@ -14,7 +15,10 @@ const WalletScreen: React.FC = (navigation: any) => {
     { tokenId: '0xA1B2', dataId: 'D1001', valueEth: 1.5 },
     { tokenId: '0xC3D4', dataId: 'D1002', valueEth: 2.0 },
     { tokenId: '0xE5F6', dataId: 'D1003', valueEth: 0.75 },
-    // Add more mock invoices as needed
+    { tokenId: '0xC3D2', dataId: 'D1032', valueEth: 2.0 },
+    { tokenId: '0xE5F5', dataId: 'D1033', valueEth: 0.75 },
+    { tokenId: '0xB3D4', dataId: 'D1002', valueEth: 3.0 },
+    { tokenId: '0xF5F6', dataId: 'D1003', valueEth: 0.75 },
   ];
 
   const renderItem = ({ item }: { item: Invoice }) => (
@@ -44,7 +48,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     marginTop: 50, // Adjust as needed
-    backgroundColor: '#fff',
+    backgroundColor: colors.surface,
   },
   title: {
     fontSize: 32,
@@ -61,7 +65,7 @@ const styles = StyleSheet.create({
   invoiceItem: {
     marginBottom: 16,
     padding: 12,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: colors.secondary,
     borderRadius: 8,
   },
   invoiceText: {

@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: width * 5 / 6,
-    height: width / 3,
+    height: width * 5 / 6,
   },
   sliderContainer: {
     // The slider will naturally align at the bottom due to flex layout

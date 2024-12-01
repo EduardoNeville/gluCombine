@@ -22,7 +22,9 @@ const TopBar: React.FC = () => {
       
       {/* Center Title */}
       <View style={{ flex: 1, paddingTop: 10, alignItems: 'center' }}>
-        <Text style={styles.title}>GluCombine</Text>
+        <Text style={styles.title}>
+          GluCom
+        </Text>
       </View>
       
       {/* Right Image */}
@@ -54,7 +56,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     color: colors.text,
-    textAlign: 'center',           // Center text within its container
   },
   profileImage: {
     width: 40,

@@ -1,6 +1,6 @@
 // BottomButtons.tsx
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 import colors from '../../types/colors';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -14,10 +14,16 @@ const BottomButtons: React.FC = () => {
   return (
     <View style={styles.buttonContainer}>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Mint")}>
-        <Text style={styles.buttonText}>Mint</Text>
+        <Image
+          style={styles.image}
+          source={require("../../assets/anvil.png")}
+        />
       </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Wallet")}>
-        <Text style={styles.buttonText}>Wallet</Text>
+        <Image
+          style={styles.image}
+          source={require("../../assets/wallet.png")}
+        />
       </TouchableOpacity>
     </View>
   );
@@ -31,7 +37,6 @@ const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
-    backgroundColor: colors.primary,
     paddingVertical: 10,
     marginHorizontal: 5,
     borderRadius: 5,
@@ -41,6 +46,10 @@ const styles = StyleSheet.create({
     color: colors.onPrimary,
     fontSize: 16,
   },
+  image: {
+    width: 60,
+    height: 60,
+  }
 });
 
 export default BottomButtons;

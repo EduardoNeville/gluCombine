@@ -72,12 +72,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   chartTitle: {
-    fontSize: 15,
+    fontSize: 30,
     color: colors.text,
     marginBottom: 10,
   },
   chartText: {
-    fontSize: 12,
+    fontSize: 20,
     color: colors.text,
     marginBottom: 10,
   },

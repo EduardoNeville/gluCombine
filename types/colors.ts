@@ -1,7 +1,7 @@
 // colors.ts
 export default {
-  primary: '#6200EE',
-  secondary: '#DEDCFF',
+  primary: '#59b385',
+  secondary: '#b9ebd2',
   accent: '#FFD700',
   background: '#FFFFFF',
   surface: '#F5F5F5',

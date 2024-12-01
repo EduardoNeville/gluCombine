@@ -6,24 +6,43 @@ import colors from '../../types/colors';
 
 const windowWidth = Dimensions.get('window').width;
 
-const chartData = {
-  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-  datasets: [
-    {
-      data: [400, 300, 500, 200, 700, 600],
-      color: (opacity = 1) => colors.primary, // Line color
-      strokeWidth: 2,
-    },
-  ],
-};
+const chartData = [
+  {
+    labels: ['Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    datasets: [
+      {
+        data: [100, 110, 115, 110, 105, 110],
+        color: (opacity = 1) => colors.primary, // Line color
+        strokeWidth: 2,
+      },
+    ],
+  },
 
-const TimeSeriesChart: React.FC = () => {
+  {
+    labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
+    datasets: [
+      {
+        data: [100, 110, 115, 110, 105, 110],
+        color: (opacity = 1) => colors.error, // Line color
+        strokeWidth: 2,
+      },
+    ],
+  },
+];
+
+
+interface TimeSeriesChartProps {
+  useFirstEntry: boolean;
+}
+
+const TimeSeriesChart: React.FC<TimeSeriesChartProps> = ({ useFirstEntry }) => {
+  const dataToUse = useFirstEntry ? chartData[0] : chartData[1];
   return (
     <View style={styles.chartContainer}>
       <Text style={styles.chartTitle}> Glucoseformer Prediction </Text>
       <Text style={styles.chartText}> Glucoseformer Gradient </Text>
       <LineChart
-        data={chartData}
+        data={dataToUse}
         width={windowWidth * 0.95}
         height={300}
         chartConfig={{

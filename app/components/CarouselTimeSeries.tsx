@@ -1,21 +1,41 @@
 import React from 'react';
 import { Dimensions, View, StyleSheet } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
-import CarouselItem from './CarouselItem'; // Adjust the import path accordingly.
+import colors from '../../types/colors';
+import TimeSeriesChart from './TimeSeriesChart';
 
 function CarouselComponent(navigation: any) {
   const width = Dimensions.get('window').width;
 
   // Step 1: Define your data array with objects containing title, value, and text.
-  const data = [
-    { head: 'Wallet', value: '£53.0', text: '+8 month over month' },
-    { head: 'Citation', value: '2,405', text: '+33% month over month' },
-    // Add more items as needed
+
+  const chartData = [
+    {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [
+        {
+          data: [100, 110, 115, 110, 105, 110],
+          color: (opacity = 1) => colors.primary, // Line color
+          strokeWidth: 2,
+        },
+      ],
+    },
+
+    {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [
+        {
+          data: [100, 110, 115, 110, 105, 110],
+          color: (opacity = 1) => colors.primary, // Line color
+          strokeWidth: 2,
+        },
+      ],
+    },
   ];
 
   // Step 3: Adjust the renderItem function to pass the data to CarouselItem.
-  const renderItem = ({ item }: { item: { head: string; value: string; text: string } }) => (
-    <CarouselItem data={item} /> // Pass the data object as a prop to CarouselItem.
+  const renderItem = ({ item }: { item: {labels: any, datasets: any} }) => (
+    <TimeSeriesChart chartData={item} /> // Pass the data object as a prop to CarouselItem.
   );
 
   return (
@@ -25,7 +45,7 @@ function CarouselComponent(navigation: any) {
         width={width}
         height={width * 2 / 3}
         autoPlay={false}
-        data={data}
+        data={chartData}
         scrollAnimationDuration={1000}
         onSnapToItem={(index: number) => console.log('current index:', index)}
         renderItem={renderItem}

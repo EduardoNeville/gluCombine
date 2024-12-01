@@ -2,15 +2,22 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import colors from '../../types/colors';
+import { useNavigation } from '@react-navigation/native';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { RootStackParamList } from '../../types/RootStackParamList';
 
-const BottomButtons: React.FC = (navigation: any) => {
+type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>;
+
+const BottomButtons: React.FC = () => {
+  const navigation = useNavigation<NavigationProp>();
+
   return (
     <View style={styles.buttonContainer}>
-      <TouchableOpacity style={styles.button} onPress={() => alert('Left Button Clicked')}>
-        <Text style={styles.buttonText}>Left Button</Text>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Mint")}>
+        <Text style={styles.buttonText}>Mint</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Wallet")}>
-        <Text style={styles.buttonText}>Right Button</Text>
+        <Text style={styles.buttonText}>Wallet</Text>
       </TouchableOpacity>
     </View>
   );
